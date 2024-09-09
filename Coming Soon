@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Coming Soon Katma</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Style_CS.css">
+</head>
+
+<body background = "Building_video.mp4">
+<div class="container">
+    <video autoplay loop muted plays-inline class = "bgclip">
+        <source src = "Building_video.mp4" type = "video/mp4">
+    </video>
+    
+    <div class = "content">
+        <p>Website is Under Construction</p>
+        <h1>We're <span>launching</span> soon</h1>
+        
+        <div class = "timer">
+            <div>
+                <p id = "days">00</p>
+                <span>Days</span>
+            </div>
+
+            <div>
+                <p id = "hours">00</p>
+                <span>Hours</span>
+            </div>
+
+            <div>
+                <p id = "minutes">00</p>
+                <span>Minutes</span>
+            </div>
+
+            <div>
+                <p id = "seconds">00</p>
+                <span>Seconds</span>
+            </div>
+        </div>
+
+        <div class = "center">
+            <button type = "show-login" onclick = "togglePopup()">Learn more</button>
+        </div>
+
+        <div  class = "pop-up">
+            <div class = "close-btn"></div>
+
+            <div class = "form">
+                <h2>Log in</h2>
+                <div class = "form-element">
+                <label for ="email">Email</label>
+                <input type = "text" id = "email" placeholder = "Enter email">
+            </div>
+
+            <div class = "form-element">
+                <label for = "password">Password</label>
+                <input type = "password" id="password" placeholder = "Enter password">
+            </div>
+
+            <div class = "form-element">
+                <input type = "checkbox" id = "remember-me">
+                <label for="remember-me" >Remember me</label>
+            </div>
+            <div class="form-element">
+                <botton>Sign in</botton>
+            </div>
+            <div class="form-element">
+                <a href = "#">FOrgot Password</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+var countDownDate = new Date("September 11, 2024 00:00:00").getTime();
+var x = setInterval(function(){
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24))/ (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60))/(1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60))/1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+</script>
+<script>
+    function togglePopup() {
+    document.querySelectorAll("#show-login").addEventListener("click",function() {
+        document.querySelectorAll(".pop-up").classList.add("active");
+    });
+    document.querySelectorAll(".pop-up .close-btn").addEventListener("click",function() {
+        document.querySelectorAll(".pop-up").classList.remove("active")
+    });
+    }
+</script>
+
+
+</body>
+
+</html>
