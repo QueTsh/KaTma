@@ -8,10 +8,10 @@
 <link rel="stylesheet" href="Style_CS.css">
 </head>
 
-<body background = "Building_video.mp4">
+<body background = "Building Logo.mp4">
 <div class="container">
     <video autoplay loop muted plays-inline class = "bgclip">
-        <source src = "Building_video.mp4" type = "video/mp4">
+        <source src = "Building Logo.mp4" type = "video/mp4">
     </video>
     
     <div class = "content">
